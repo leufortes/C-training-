@@ -14,13 +14,23 @@ namespace C____first // Nome do código fonte
     {
         static void Main(string[] args) // Função Principal (Todo código colocado dentro da função "MAIN" é o primeiro código que será executado;
         {
-            Console.WriteLine("Test_c#_first_program");
-            Console.WriteLine("Test_C#_repository");
-            Console.Write("Quebra_de_linha\n");
-            Console.Write("Test");
 
-
+            int a = 13;
+            string b = "Welcome! ";
+            float c = 238.58f;
+            char d = 'u';
+            bool e = true;
+            Console.WriteLine("Rev_First_Code_In_C#");
+            Console.WriteLine(b);
+            Console.WriteLine("Os valores correspondem aos valores, respectivamente:");
+            Console.Write("Primeiro: ");
+            Console.WriteLine(c);
+            Console.Write("Segundo: ");
+            Console.WriteLine(13);
+            Console.WriteLine(e);
             Console.ReadLine();
+           
+
         }
     }
 }

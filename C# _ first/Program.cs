@@ -22,13 +22,17 @@ namespace C____first // Nome do código fonte
             bool e = true;
             Console.WriteLine("Rev_First_Code_In_C#");
             Console.WriteLine(b);
-            Console.WriteLine("Os valores correspondem aos valores, respectivamente:");
+            Console.WriteLine("Os valores correspondem, respectivamente:");
             Console.Write("Primeiro: ");
             Console.WriteLine(c);
             Console.Write("Segundo: ");
             Console.WriteLine(13);
             Console.WriteLine(e);
             Console.ReadLine();
+
+            c = 348.29f;
+
+
            
 
         }

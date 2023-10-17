@@ -1,0 +1,2 @@
+C:\Users\lfalcantara\source\repos\C# _ first\C# _ first\obj\Debug\C# _ first.csproj.AssemblyReference.cache
+C:\Users\lfalcantara\source\repos\C# _ first\C# _ first\obj\Debug\C# _ first.csproj.CoreCompileInputs.cache

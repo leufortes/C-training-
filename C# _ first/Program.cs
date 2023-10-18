@@ -15,25 +15,58 @@ namespace C____first // Nome do código fonte
         static void Main(string[] args) // Função Principal (Todo código colocado dentro da função "MAIN" é o primeiro código que será executado;
         {
 
-            int a = 13;
-            string b = "Welcome! ";
-            float c = 238.58f;
-            char d = 'u';
-            bool e = true;
-            Console.WriteLine("Rev_First_Code_In_C#");
-            Console.WriteLine(b);
-            Console.WriteLine("Os valores correspondem, respectivamente:");
-            Console.Write("Primeiro: ");
-            Console.WriteLine(c);
-            Console.Write("Segundo: ");
-            Console.WriteLine(13);
-            Console.WriteLine(e);
-            Console.ReadLine();
+            //REV 18/10/2023 - BÁSICO DE VARIAVEIS - INT, FLOAT, CHAR, STRING, BOOL
 
-            c = 348.29f;
+            int numero = 30;
+            float ponto = 30.50f;
+            char ajuste = 'a';
+            string nome = "Leonardo Fortes Alcantara";
+            var modelo = "AI_ftp"; // Declarando uma variavel por meio do "VAR"
+            dynamic cor_favorita = "Vermelho"; // Exemplo de manipulação de tipo de variavel 
+
+            Console.Write("Seu numero é igual ");
+            Console.Write(ajuste);
+            Console.Write(" : ");
+            Console.Write(numero);
+            Console.Write(" e ");
+            Console.WriteLine(ponto);
+            Console.WriteLine("Seu nome é: ");
+            Console.WriteLine(nome);
 
 
-           
+            nome = "Nicole"; // Manipulação de variaveis
+
+            Console.WriteLine(nome); // Impressão da variavel manipulada
+
+            Console.WriteLine(modelo); // Impressão do atalho de atribuição a variaveis
+
+            Console.WriteLine(cor_favorita); // Visualização da variavel de tipo dynamic
+
+            cor_favorita = 230.256f; // Alterado o tipo da variavel para float assim, na proxima vizualizãção o valor sera alterado
+
+            Console.WriteLine(cor_favorita); // Impressão da variavel com a alteração de tipo usando dynamic
+
+            cor_favorita = 2654; // Alerando para um valor inteiro
+
+            Console.WriteLine(cor_favorita); // Impressão da variavel no tipo INT
+
+            // Em c# a típagem dinamica não é muito utilizada e acaba sendo bem especifica
+
+
+            // NEW - 18/10/2023 - CONSTANTES
+
+            const float PI = 3.14f; // Declaração de umavariavel constante - CONSTANTE - TIPO - NOME = VALOR
+
+            Console.WriteLine(PI);
+
+            // ENTRADA DO USUARIO
+
+            Console.WriteLine("Escreva seu nome: ");
+            string usuario = Console.ReadLine();
+
+            Console.Write("Seu nome é: ");
+            Console.Write(usuario);
+            Console.ReadLine();  
 
         }
     }

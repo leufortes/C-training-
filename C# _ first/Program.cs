@@ -3,8 +3,13 @@
 
 using System; // Modúlos / Serve para que o C# seja capaz de manipular coisas do sistema operacional do usuario (data, console, etc)
 using System.Collections.Generic; // Modúlos / 
+using System.Diagnostics.Eventing.Reader;
+using System.IO;
 using System.Linq; // Modúlos / Trabalhar com um conjunto muito grande de dados
+using System.Net;
+using System.Runtime.InteropServices;
 using System.Text; // Modúlos / Permite que você manipule texto (minusculo, maiusculo, remover espaços em branco, etc)
+using System.Threading;
 using System.Threading.Tasks; // Modúlos / Serve para ao criar um programa que roda em varios nucleos de processadores 
 
 //Inicio do programa
@@ -15,59 +20,42 @@ namespace C____first // Nome do código fonte
         static void Main(string[] args) // Função Principal (Todo código colocado dentro da função "MAIN" é o primeiro código que será executado;
         {
 
-            //REV 18/10/2023 - BÁSICO DE VARIAVEIS - INT, FLOAT, CHAR, STRING, BOOL
+            int valor_pago = 0;
+            int preço_do_produto = 80;
 
-            int numero = 30;
-            float ponto = 30.50f;
-            char ajuste = 'a';
-            string nome = "Leonardo Fortes Alcantara";
-            var modelo = "AI_ftp"; // Declarando uma variavel por meio do "VAR"
-            dynamic cor_favorita = "Vermelho"; // Exemplo de manipulação de tipo de variavel 
+            Console.Write("O valor de um fone é de: ");
+            Console.WriteLine(preço_do_produto);
 
-            Console.Write("Seu numero é igual ");
-            Console.Write(ajuste);
-            Console.Write(" : ");
-            Console.Write(numero);
-            Console.Write(" e ");
-            Console.WriteLine(ponto);
-            Console.WriteLine("Seu nome é: ");
-            Console.WriteLine(nome);
+            Console.WriteLine("Digite o valor que você tem para pagar: ");
+            valor_pago = int.Parse(Console.ReadLine());
 
+            Console.Write("Você pagou: ");
+            Console.WriteLine(valor_pago);
+            
+            if (valor_pago == 80)
+                    {
 
-            nome = "Nicole"; // Manipulação de variaveis
+                Console.WriteLine("Você pagou o valor completo!");
+            }
+            else if (valor_pago > 80)
+                        {
+                Console.WriteLine("Você pagou um valor maior do que deveria ser pago. ");
+                Console.WriteLine("Seu troco é de: ");
+                float troco = valor_pago - preço_do_produto;
+                Console.WriteLine(troco);
+            }
+            else
+            {
+                Console.WriteLine("Você pagou um valor abaixo do que deveria ser pago");
+                Console.WriteLine("Faltam: ");
+                float diferença = preço_do_produto - valor_pago;
+                Console.WriteLine(diferença);
 
-            Console.WriteLine(nome); // Impressão da variavel manipulada
+            }
+       
 
-            Console.WriteLine(modelo); // Impressão do atalho de atribuição a variaveis
+            Console.ReadLine();
 
-            Console.WriteLine(cor_favorita); // Visualização da variavel de tipo dynamic
-
-            cor_favorita = 230.256f; // Alterado o tipo da variavel para float assim, na proxima vizualizãção o valor sera alterado
-
-            Console.WriteLine(cor_favorita); // Impressão da variavel com a alteração de tipo usando dynamic
-
-            cor_favorita = 2654; // Alerando para um valor inteiro
-
-            Console.WriteLine(cor_favorita); // Impressão da variavel no tipo INT
-
-            // Em c# a típagem dinamica não é muito utilizada e acaba sendo bem especifica
-
-
-            // NEW - 18/10/2023 - CONSTANTES
-
-            const float PI = 3.14f; // Declaração de umavariavel constante - CONSTANTE - TIPO - NOME = VALOR
-
-            Console.WriteLine(PI);
-
-            // ENTRADA DO USUARIO
-
-            Console.WriteLine("Escreva seu nome: ");
-            string usuario = Console.ReadLine();
-
-            Console.Write("Seu nome é: ");
-            Console.Write(usuario);
-            Console.ReadLine();  
-
-        }
+        } 
     }
 }

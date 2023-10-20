@@ -18,67 +18,47 @@ namespace C____first // Nome do código fonte
 {
     internal class Program // POO
     {
-        static void Main(string[] args) // Função Principal (Todo código colocado dentro da função "MAIN" é o primeiro código que será executado;
+        static void Main(string[] args)
         {
-            GerarPreco(80);
-            int valor_pago = 0;
-            int preço_do_produto = 80;
+            int preco_do_produto = 60;
+            int valor_pago;
 
-            teste_func();
+            Console.WriteLine("Temos um relógio que está no valor de: ");
+            Console.Write("R$");
+            Console.WriteLine(preco_do_produto);
+           
 
-            Console.Write("O valor de um fone é de: ");
-            Console.WriteLine(preço_do_produto);
-
-            Console.WriteLine("Digite o valor que você tem para pagar: ");
+            Console.WriteLine("Digite o valor que você quer pagar:");
             valor_pago = int.Parse(Console.ReadLine());
 
-            Console.Write("Você pagou: ");
-            Console.WriteLine(valor_pago);
-            
-            if (valor_pago == 80)
-                    {
+            int troco = valor_pago - preco_do_produto;
+            int sobra = preco_do_produto - valor_pago;
 
-                Console.WriteLine("Você pagou o valor completo!");
+
+            if (valor_pago == 60)
+            {
+                Console.WriteLine("Você pagou o valor cheio, muito obrigado!");
             }
-            else if (valor_pago > 80)
-                        {
-                Console.WriteLine("Você pagou um valor maior do que deveria ser pago. ");
-                Console.WriteLine("Seu troco é de: ");
-                float troco = valor_pago - preço_do_produto;
+            else if (valor_pago > 60)
+            {
+                Console.WriteLine("Você pagou um valor acima do esperado.");
+                Console.WriteLine("Gerando seu troco...");
+                Thread.Sleep(3000);
+                Console.WriteLine("Seu troco é de:");
                 Console.WriteLine(troco);
             }
             else
             {
-                Console.WriteLine("Você pagou um valor abaixo do que deveria ser pago");
-                Console.WriteLine("Faltam: ");
-                float diferença = preço_do_produto - valor_pago;
-                Console.WriteLine(diferença);
-   
-
-
+                Console.WriteLine("Você pagou um valor menor do que o esperado");
+                Console.WriteLine("Gerando valor restante...");
+                Thread.Sleep(3000);
+                Console.WriteLine("O valor que resta é de:");
+                Console.WriteLine(sobra);
             }
-       
-
             Console.ReadLine();
+        } 
 
-        }
-
-        static void teste_func()
-        {
-
-            Console.WriteLine("Bem vindo, clique ENTER para avançar");
-            Console.ReadLine();
-        }
-
-        static void GerarPreco(int preco)
-        {
-
-            Console.WriteLine(preco);
-
-        }
-        
-
-        }
     }
+}
 
 

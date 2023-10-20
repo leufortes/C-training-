@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq; // Modúlos / Trabalhar com um conjunto muito grande de dados
 using System.Net;
 using System.Runtime.InteropServices;
+using System.Security.Principal;
 using System.Text; // Modúlos / Permite que você manipule texto (minusculo, maiusculo, remover espaços em branco, etc)
 using System.Threading;
 using System.Threading.Tasks; // Modúlos / Serve para ao criar um programa que roda em varios nucleos de processadores 
@@ -19,9 +20,11 @@ namespace C____first // Nome do código fonte
     {
         static void Main(string[] args) // Função Principal (Todo código colocado dentro da função "MAIN" é o primeiro código que será executado;
         {
-
+            GerarPreco(80);
             int valor_pago = 0;
             int preço_do_produto = 80;
+
+            teste_func();
 
             Console.Write("O valor de um fone é de: ");
             Console.WriteLine(preço_do_produto);
@@ -50,12 +53,32 @@ namespace C____first // Nome do código fonte
                 Console.WriteLine("Faltam: ");
                 float diferença = preço_do_produto - valor_pago;
                 Console.WriteLine(diferença);
+   
+
 
             }
        
 
             Console.ReadLine();
 
-        } 
+        }
+
+        static void teste_func()
+        {
+
+            Console.WriteLine("Bem vindo, clique ENTER para avançar");
+            Console.ReadLine();
+        }
+
+        static void GerarPreco(int preco)
+        {
+
+            Console.WriteLine(preco);
+
+        }
+        
+
+        }
     }
-}
+
+

@@ -3,6 +3,7 @@
 
 using System; // Modúlos / Serve para que o C# seja capaz de manipular coisas do sistema operacional do usuario (data, console, etc)
 using System.Collections.Generic; // Modúlos / 
+using System.Collections.Specialized;
 using System.Diagnostics.Eventing.Reader;
 using System.IO;
 using System.Linq; // Modúlos / Trabalhar com um conjunto muito grande de dados
@@ -18,45 +19,65 @@ namespace C____first // Nome do código fonte
 {
     internal class Program // POO
     {
+
+
+        // % - (100 / total) * n
+        //Calculo de imposto de renda 
+
         static void Main(string[] args)
+
         {
-            int preco_do_produto = 60;
-            int valor_pago;
+            double salario;
 
-            Console.WriteLine("Temos um relógio que está no valor de: ");
-            Console.Write("R$");
-            Console.WriteLine(preco_do_produto);
-           
-
-            Console.WriteLine("Digite o valor que você quer pagar:");
-            valor_pago = int.Parse(Console.ReadLine());
-
-            int troco = valor_pago - preco_do_produto;
-            int sobra = preco_do_produto - valor_pago;
+            Console.WriteLine("Calculo de imposto de renda com base do ano de 2022: ");
+            Console.WriteLine("Digite seu salário");
+            salario = double.Parse(Console.ReadLine());
+            double calculo2 = salario / 100  * 7.5;
+            double calculo3 = salario / 100 * 15;
+            double calculo4 = salario / 100 * 22.5;
+            double calculo5 = salario / 100 * 27.5;
 
 
-            if (valor_pago == 60)
+            if (salario > 0 && salario < 1903.98)
             {
-                Console.WriteLine("Você pagou o valor cheio, muito obrigado!");
+                Console.WriteLine("Você está isento de imposto de renda!");
+
             }
-            else if (valor_pago > 60)
+            else if (salario > 1903.99 && salario < 2826.65)
             {
-                Console.WriteLine("Você pagou um valor acima do esperado.");
-                Console.WriteLine("Gerando seu troco...");
-                Thread.Sleep(3000);
-                Console.WriteLine("Seu troco é de:");
-                Console.WriteLine(troco);
+                Console.WriteLine("Com seu sálario, você pagará 7,5%");
+                Console.WriteLine("7,5% de " + salario + " = " + calculo2);
+
             }
-            else
+            else if (salario > 2826.66 && salario < 3751.05)
             {
-                Console.WriteLine("Você pagou um valor menor do que o esperado");
-                Console.WriteLine("Gerando valor restante...");
-                Thread.Sleep(3000);
-                Console.WriteLine("O valor que resta é de:");
-                Console.WriteLine(sobra);
+                Console.WriteLine("Com seu sálario, você pagará 15%");
+                Console.WriteLine("15% de " + salario + " = " + calculo3);
+
             }
+            else if (salario > 3751.06 && salario < 4664.68)
+            {
+                Console.WriteLine("Com seu sálario, você pagará 22,5%");
+                Console.WriteLine("22,5% de " + salario + " = " + calculo4);
+            }
+            else if (salario > 4664.68)
+            {
+                Console.WriteLine("Com seu sálario, você pagará 27.5%");
+                Console.WriteLine("27,5% de " + salario + " = " + calculo5);
+            }
+
+
             Console.ReadLine();
-        } 
+
+
+        }
+
+  
+       
+
+
+
+
 
     }
 }
